@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Action Status</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="../../../../dist/2.9.3/Chart.min.js"></script>
+	<script src="../../utils.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src="../../../dist/2.9.3/Chart.min.js"></script>
+	<script src="../utils.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+    
+ul, #myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.box::before {
+  content: "\2610";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.check-box::before {
+  content: "\2611"; 
+  color: dodgerblue;
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3">
+<div class="container">
+
+<div class="row">
+<div class="col-sm-9">
+<br>
+              <label for="input-search">Search for wells:</label>
+            <div class="form-group">
+              <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
+            </div>
+            
+            <ul id="myUL">
+  <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Wells</span>
+    <ul class="nested">
+      <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Active</span>
+        <ul class="nested">
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F1</span>
+            	<ul class="nested">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              	</ul>
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F2</span>
+            <ul class="nested">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </li>
+        </ul>
+      </li> 
+      
+      <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Cycle</span>
+        <ul class="nested">
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F1</span>
+            	<ul class="nested">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              	</ul>
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F2</span>
+            <ul class="nested">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+      
+      
+      <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Idle</span>
+        <ul class="nested">
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F1</span>
+            	<ul class="nested">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              	</ul>
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F2</span>
+            <ul class="nested">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+    </ul>
+  </li>
+</ul>
+            
+            <br>
+            <button type="button" class="btn btn-light" id="btn-search">Search</button>
+            <button type="button" class="btn btn-light" id="btn-clear-search">Clear</button>
+</div>
+</div>
+</div></div>
+    <div class="col-sm-8">
+	<br>
+		<div class="container text-right">
+                              <button type="button" class="btn btn-light">Export</button>
+                              <button type="button" class="btn btn-light">Report</button>
+                            </div>
+    	<div id="container" style="width: 75%;">
+		<canvas id="canvas"></canvas>
+		<br>
+		<p>Summary of corrective action done:</p>
+		<ol type="1">
+		  <li>EPA-1 - insert valve</li>
+		  <li>EBA-2 - MOC & RA</li>
+		</ol>  
+	</div>
+	</div>
+</div>
+
+
+<script>
+
+		var MONTHS = ['July', 'August', 'September'];
+		var color = [
+						'rgb(255, 51, 184)',
+                        'rgb(247, 189, 10 )',
+						'rgb(25, 51, 159)',
+						'rgb(10, 247, 153 )',
+						'rgb(51, 125, 255 )',
+                        'rgb(187, 51, 255)',
+                        'rgb(110, 255, 51 )'
+					];
+		var barChartData = {
+			labels: MONTHS,
+			datasets: [{
+				label: 'Total String 69',
+				backgroundColor: [
+                        'rgb(187, 51, 255)',
+						'rgb(187, 51, 255)',
+						'rgb(187, 51, 255)'
+					],
+				borderColor: 'rgb(251, 250, 247)',
+				borderWidth: 1,
+				data: [6, 5, 8]
+			}, {
+				label: 'Total String With Integrity Issue 4',
+				backgroundColor: [
+						'rgb(247, 189, 10 )',
+						'rgb(247, 189, 10 )',
+						'rgb(247, 189, 10 )'
+					],
+				borderColor: 'rgb(251, 250, 247)',
+				borderWidth: 1,
+				data: [8, 7, 6]
+			},
+			{
+				label: 'Total String Remedial Done 2',
+				backgroundColor: [
+						
+						'rgb(25, 51, 159)',
+						'rgb(25, 51, 159)',
+						'rgb(25, 51, 159)'
+					],
+				borderColor: 'rgb(251, 250, 247)',
+				borderWidth: 1,
+				data: [5, 6, 4]
+			}]
+
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myBar = new Chart(ctx, {
+				type: 'bar',
+				data: barChartData,
+				options: {
+					responsive: true,
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Corrective Action History'
+					}
+				}
+			});
+
+		};
+
+
+var toggler = document.getElementsByClassName("box");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("check-box");
+  });
+}
+</script>
+</body>
+</html>

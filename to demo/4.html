@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Well MAASP/MAWOP</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="../../../../dist/2.9.3/Chart.min.js"></script>
+	<script src="../../utils.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src="../../../dist/2.9.3/Chart.min.js"></script>
+	<script src="../utils.js"></script>
+	<style>
+	canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	}
+	</style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+    	<div class="p-2 flex-fill ">
+		<h2 class="text-center">WELL EBA-29</h2>
+		<ul class="list-group list-group-vertical"> 
+			<li class="list-group-item">
+				<div class="table-responsive-sm border">          
+					<table class="table table-borderless table-sm">
+						<thead>
+							<tr>
+								<th colspan="7"></th>
+								<th class="bg-light" colspan="4">Rating</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="2"></td>
+								<td class="bg-light font-weight-bold">Installed?Yes/No</td>
+								<td class="bg-light font-weight-bold">Depth (ft TVD)</td>
+								<td class="bg-light font-weight-bold">OD (Inch)</td>
+								<td class="bg-light font-weight-bold">ppf</td>
+								<td class="bg-light font-weight-bold">Material</td>
+								<td class="bg-light font-weight-bold">Collapse (psi)</td>
+								<td class="bg-light font-weight-bold">Burst (psi)</td>
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold text-center text-justify" rowspan="7">Tubular</td> 
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold">Tubing</td>
+								<td>Yes</td>
+								<td class="bg-warning">10,188</td>
+								<td>5-1/2"</td>
+								<td>17</td>
+								<td>L-80</td>
+								<td class="bg-warning">6,280</td>
+								<td class="bg-warning">7,342</td>
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold">A Casing</td>
+								<td>Yes</td>
+								<td class="bg-warning">9,749</td>
+								<td>9-5/8"</td>
+								<td>47</td>
+								<td>L-80</td>
+								<td class="bg-warning">4,757</td>
+								<td class="bg-warning">6,517</td>
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold">Liner</td>
+								<td class=" bg-secondary">No</td>
+								<td class=" bg-secondary"></td>
+								<td class=" bg-secondary"></td>
+								<td class=" bg-secondary"></td>
+								<td class=" bg-secondary"></td>
+								<td class=" bg-secondary"></td>
+								<td class=" bg-secondary"></td>
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold">B Casing</td>
+								<td>Yes</td>
+								<td class="bg-warning">5,161</td>
+								<td>13-3/8"</td>
+								<td>68</td>
+								<td>L-80</td>
+								<td class="bg-warning">2,263</td>
+								<td class="bg-warning">4,767</td>
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold">C Casing</td>
+								<td>Yes</td>
+								<td class="bg-warning">1,864</td>
+								<td>18-5/8"</td>
+								<td>87.5</td>
+								<td>L-80</td>
+								<td class="bg-warning">624</td>
+								<td class="bg-warning">3,263</td>
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold">D Casing</td>
+								<td class=" bg-secondary">No</td>
+								<td class=" bg-secondary"></td>
+								<td class=" bg-secondary"></td>
+								<td class=" bg-secondary"></td>
+								<td class=" bg-secondary"></td>
+								<td class=" bg-secondary"></td>
+								<td class=" bg-secondary"></td>
+							</tr>
+							<tr>   
+						</tbody>
+					</table>
+				</div>
+			</li>
+		</ul>
+
+		<br>
+
+		<ul class="list-group list-group-vertical"> 
+			<li class="list-group-item">
+				<div class="table-responsive-sm border">          
+					<table class="table table-borderless table-sm">
+						<thead>
+							<tr>
+								<th colspan="7"></th>
+								<th class="bg-light" colspan="4">Rating</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="2"></td>
+								<td class="bg-light font-weight-bold">Installed?Yes/No</td>
+								<td class="bg-light font-weight-bold">Depth (ft TVD)</td>
+								<td class="bg-light font-weight-bold">OD (Inch)</td>
+								<td class="bg-light font-weight-bold">ppf</td>
+								<td class="bg-light font-weight-bold">Material</td>
+								<td class="bg-light font-weight-bold">Tested Pressure (psi)</td>
+								<td class="bg-light font-weight-bold">Tested Pressure at depth (psi)</td>
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold text-center text-justify" rowspan="7">Accessory</td> 
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold">SCSSV</td>
+								<td>Yes</td>
+								<td class="bg-warning">800</td>
+								<td>5-1/2"</td>
+								<td></td>
+								<td></td>
+								<td class="bg-warning">4600</td>
+								<td>4,948</td>      
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold">Packer</td>
+								<td>Yes</td>
+								<td class="bg-warning">9,742</td>
+								<td>9-5/8"</td>
+								<td></td>
+								<td></td>
+								<td class="bg-warning">2600</td>
+								<td>6,838</td>
+							</tr>            
+						</tbody>
+					</table>
+				</div>
+			</li>
+		</ul>
+
+
+		<br>
+
+		<ul class="list-group list-group-vertical"> 
+			<li class="list-group-item">
+				<div class="table-responsive-sm border">          
+					<table class="table table-border table-sm">
+						<thead>
+							<tr>
+								<th colspan="3"></th>
+								<th class="bg-light" colspan="2">Fluid Weight</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="1"></td>
+								<td class="bg-light font-weight-bold">Context</td>
+								<td class="bg-light font-weight-bold">TOC (ft TVD)</td>
+								<td class="bg-light font-weight-bold">ppg</td>
+								<td class="bg-light font-weight-bold">ps/ft</td>
+								<td class="bg-light font-weight-bold" colspan="2">FracGradient@ shoe (psi/ft)</td>
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold text-center text-justify">Tubing</td> 
+								<td>Gas</td>
+								<td></td>
+								<td class="bg-warning">1.9</td>
+								<td>0.10</td>
+								<td></td>
+							</tr>   
+							<tr>
+								<td class="bg-light font-weight-bold text-center text-justify">Annulus A</td> 
+								<td>Degraded Mud</td>
+								<td></td>
+								<td class="bg-warning">10.0</td>
+								<td>0.52</td>
+								<td class="bg-warning">0.73</td>
+							</tr>  
+							<tr>
+								<td class="bg-light font-weight-bold text-center text-justify">Annulus B</td> 
+								<td>Cement + Fluid</td>
+								<td class="bg-warning">4459</td>
+								<td class="bg-warning">11.5</td>
+								<td>0.60</td>
+								<td class="bg-warning">0.73</td>
+							</tr>
+							<tr>
+								<td class="bg-light font-weight-bold text-center text-justify">Annulus C</td> 
+								<td>Cement + Fluid</td>
+								<td class="bg-warning">1254</td>
+								<td class="bg-warning">11.5</td>
+								<td>0.60</td>
+								<td class="bg-warning">0.73</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+    </div>
+    <div class="col">
+    		<div class="p-2 flex-fill">												
+		<h2 class="text-center">MAASP</h2>
+				<ul class="list-group list-group-horizontal"> 				
+					<li class="list-group-item">
+						<div class="table-responsive-sm border">          
+							<table class="table table-border table-sm">
+								<thead>
+									<tr>
+									<th></th>
+									<th class="bg-light" colspan="1">ISO 16530-2</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td></td>
+										<td class="bg-light font-weight-bold">MAASP</td>      
+									</tr>
+									<tr>
+										<td class="bg-light font-weight-bold">Annulus A</td>
+										<td>2,177</td>
+									</tr>
+									<tr>
+										<td class="bg-light font-weight-bold">Annulus B</td>
+										<td>2,177</td>
+									</tr>
+									<tr>
+										<td class="bg-light font-weight-bold">Annulus C</td>
+										<td>2,177</td>
+									</tr>      
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="table-responsive-sm border">          
+						    <table class="table table-border table-sm">
+								<thead>
+								    <tr>
+										<th class="bg-light" colspan="1">ISO 16530-2</th>
+								    </tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bg-light font-weight-bold">Upper Operating Limit (80%)</td>      
+									</tr>
+									<tr>
+										<td>1,741</td>
+									</tr>
+									<tr>
+										<td>545</td>
+									</tr>
+									<tr>
+										<td>197</td>
+									</tr>      
+								</tbody>
+						    </table>
+					    </div>
+					</li>
+					<li class="list-group-item">
+						<div class="table-responsive-sm border">          
+							<table class="table table-border table-sm">
+								<thead>
+									<tr>
+										<th class="bg-light" colspan="1">API RP 90</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bg-light font-weight-bold">MAWOP</td>      
+									</tr>
+									<tr>
+										<td>3,259</td>
+									</tr>
+									<tr>
+										<td>2,384</td>
+									</tr>
+									<tr>
+										<td>979</td>
+									</tr>      
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="table-responsive-sm border">          
+							<table class="table table-border table-sm">
+								<thead>
+									<tr>
+										<th class="bg-light" colspan="1">INPUT</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bg-light font-weight-bold">Trigger</td>      
+									</tr>
+									<tr>
+										<td>1,500</td>
+									</tr>
+									<tr>
+										<td>300</td>
+									</tr>
+									<tr>
+										<td>100</td>
+									</tr>      
+								</tbody>
+							</table>
+						</div>
+					</li>
+				</ul>
+				<br>
+
+				<ul class="list-group list-group-vertical"> 
+					<li class="list-group-item">
+                  		<div class="border" id="container" style="width: 75%;">
+                      		<canvas id="canvas"></canvas>
+                 		 </div>
+                  	</li>
+				</ul>
+
+	</div>
+    </div>
+  </div>
+</div>
+
+<script>
+		var MONTHS = ['Annulus A', 'Annulus B', 'Annulus C'];
+		var color = [
+						'rgb(255, 51, 184)',
+                        'rgb(247, 189, 10 )',
+						'rgb(25, 51, 159)',
+						'rgb(10, 247, 153 )',
+						'rgb(51, 125, 255 )',
+                        'rgb(187, 51, 255)',
+                        'rgb(110, 255, 51 )'
+					];
+		var barChartData = {
+			labels: ['Annulus A', 'Annulus B', 'Annulus C'],
+			datasets: [{
+				label:'MAASP',
+				backgroundColor: [
+                        'rgb(187, 51, 255)',
+						'rgb(187, 51, 255)',
+						'rgb(187, 51, 255)'
+					],
+				borderColor: 'rgb(251, 250, 247)',
+				borderWidth: 1,
+				data: [2177, 681, 246]
+			}, {
+				label: 'Upper Operating Limit 80%(UOL)',
+				backgroundColor: [
+						'rgb(247, 189, 10 )',
+						'rgb(247, 189, 10 )',
+						'rgb(247, 189, 10 )'
+					],
+				borderColor: 'rgb(251, 250, 247)',
+				borderWidth: 1,
+				data: [1741, 545, 197]
+			},
+			{
+				label: 'MAWOP',
+				backgroundColor: [
+						
+						'rgb(25, 51, 159)',
+						'rgb(25, 51, 159)',
+						'rgb(25, 51, 159)'
+					],
+				borderColor: 'rgb(251, 250, 247)',
+				borderWidth: 1,
+				data: [3259, 2384, 979]
+			}]
+
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myBar = new Chart(ctx, {
+				type: 'bar',
+				data: barChartData,
+				options: {
+					responsive: true,
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'MAASP, UOL, and MAWOP'
+					}
+				}
+			});
+
+		};
+
+	</script>
+</body>
+</html>

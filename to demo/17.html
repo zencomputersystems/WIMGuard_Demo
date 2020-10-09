@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Action Status</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="../../../../dist/2.9.3/Chart.min.js"></script>
+	<script src="../../utils.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src="../../../dist/2.9.3/Chart.min.js"></script>
+	<script src="../utils.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+    
+ul, #myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.box::before {
+  content: "\2610";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.check-box::before {
+  content: "\2611"; 
+  color: dodgerblue;
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3">
+<div class="container">
+
+<div class="row">
+<div class="col-sm-9">
+<br>
+              <label for="input-search">Search for wells:</label>
+            <div class="form-group">
+              <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
+            </div>
+            
+            <ul id="myUL">
+  <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Wells</span>
+    <ul class="nested">
+      <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Active</span>
+        <ul class="nested">
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F1</span>
+            	<ul class="nested">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              	</ul>
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F2</span>
+            <ul class="nested">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </li>
+        </ul>
+      </li> 
+      
+      <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Cycle</span>
+        <ul class="nested">
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F1</span>
+            	<ul class="nested">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              	</ul>
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F2</span>
+            <ul class="nested">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+      
+      
+      <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Idle</span>
+        <ul class="nested">
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F1</span>
+            	<ul class="nested">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              	</ul>
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F2</span>
+            <ul class="nested">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+    </ul>
+  </li>
+</ul>
+            
+            <br>
+            <button type="button" class="btn btn-light" id="btn-search">Search</button>
+            <button type="button" class="btn btn-light" id="btn-clear-search">Clear</button>
+</div>
+</div>
+</div></div>
+
+<br>
+  <div class="col-sm-8">
+    <br>
+    <div class="container text-right">
+        <button type="button" class="btn btn-light">Export</button>
+        <button type="button" class="btn btn-light">Report</button>
+		<button type="button" class="btn btn-light">Edit</button>
+    </div>	
+	
+	<br>
+	
+	<table class="table table-bordered table-sm">
+
+    <tbody>
+      
+	 <tr class="text-center">
+        <td colspan="2">Wellstock</td>
+        <td colspan="5">Primary Barrier Envelope</td>
+        <td colspan="6">Secondary Barrier</td>
+        <td colspan="7">Tertiery Barrier</td>
+        <td colspan="3">General</td>
+        <td rowspan="2">Well Final Results</td>     
+      </tr>
+	  
+	  <tr class="text-center">
+        <td>Well</td>
+        <td>String</td>
+        <td>String</td>
+        <td>Packer</td>
+        <td>TRSCSSV</td>
+        <td>Crown Valve</td>
+        <td>GLV</td>
+        <td>Production Casing B/Up D5</td>
+		<td>Tubing Hanger B/Up D5</td>
+        <td>UMV-SSV B/Up F5</td>
+        <td>Swab Valve B/Up G5</td>
+        <td>A-Annulus SOV(Inner) B/Up D5</td>
+        <td>VR Plug B/Up D5</td>
+        <td>LMV B/Up for L5</td>
+        <td>PWV-SSV B/Up for L5</td>
+        <td>PWV B/Up L5</td>
+        <td>KWV(Inner) B/Up K5</td>
+        <td>KWV(Outer) B/Up Q5</td>
+        <td>A-Annulus SOV(Outer) B/Up M5</td>
+        <td>VR Plug Blind Flange B/Up O5</td>
+        <td>Actuator speed</td>
+        <td>Wellhead growth</td>
+        <td>Visual on Wellhead and conductor</td>   
+      </tr>
+	  
+      <tr class="text-center">
+        <td rowspan="2">EBA-1St1</td>
+        <td>Long</td>
+        <td>Green</td>
+        <td>Orange</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td rowspan="13">
+		 <img src="icons/img1.png" height="100" width="300"><br>
+		 <img src="icons/img2.png" height="100" width="300"><br>
+		 <img src="icons/img3.png" height="100" width="300"><br>
+		 <img src="icons/img4.png" height="100" width="300"><br>
+		 <br>
+		 <a class="font-weight-bolder">Integrity Status:</a>
+		   <a>Primary and Secondary shall there is a yellow, user must be prompt, and if tertiery is intact status is still green</a>
+		</td>       
+      </tr>
+	  
+	  <tr class="text-center">
+        <td>Short</td>
+        <td>Green</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>      
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Date Start</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td></td>
+        <td></td>
+        <td></td>     
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Frequency(Days)-Userdefine</td>
+        <td>Daily</td>
+        <td>Daily</td>
+        <td>183</td>
+        <td>183</td>
+        <td>Daily</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>    
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Next Interval(test) to trigger email as per user define</td>
+        <td>Daily</td>
+        <td>Daily</td>
+        <td>1-Dec</td>
+        <td>1-Dec</td>
+        <td>Daily</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>     
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Monitoring/Test</td>
+        <td>Exceed MAASP/MAWOP</td>
+        <td>Exceed MAASP/MAWOP</td>
+        <td>to fill up the sheet</td>
+        <td>to fill up the sheet</td>
+        <td>A-Annulus=FTHP=Fail</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>      
+      </tr>
+	  
+	  <tr class="text-center">
+        <td rowspan="4" colspan="2">Results on the test</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td></td>
+        <td></td>
+        <td></td>     
+      </tr>
+	  
+	  <tr class="text-center">
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td></td>
+        <td></td>
+        <td></td>    
+      </tr>
+	  
+	  <tr class="text-center">
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td></td>
+        <td></td>
+        <td></td>    
+      </tr>
+	  
+	  <tr class="text-center">
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td></td>
+        <td></td>
+        <td></td>    
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2" rowspan="3">Action</td>
+        <td colspan="2">Remark</td>
+        <td colspan="19"></td>    
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Date</td>
+        <td colspan="19"></td> 
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Frequence</td>
+        <td colspan="19"></td>
+      </tr>
+	  
+	  <tr class="text-center">
+        <td rowspan="2">EBA-2St1</td>
+        <td>Long</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td rowspan="10"></td>
+        <td rowspan="10"></td>
+        <td rowspan="10"></td>
+        <td rowspan="13"></td>       
+      </tr>
+	  
+	  <tr class="text-center">
+        <td>Short</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>      
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Date Start</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+        <td>1-Jun</td>
+		<td>1-Jun</td>
+		<td>1-Jun</td>
+		<td>1-Jun</td>
+		<td>1-Jun</td>      
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Frequence(Days)</td>
+        <td>Daily</td>
+        <td>Daily</td>
+        <td>183</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>    
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Next Interval(test)</td>
+        <td>Daily</td>
+        <td>Daily</td>
+        <td>1-Dec</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>       
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Monitoring/Test</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>       
+      </tr>
+	  
+	  <tr class="text-center">
+        <td rowspan="4" colspan="2">Results on the test</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>
+        <td>Green</td>     
+      </tr>
+	  
+	  <tr class="text-center">
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>
+        <td>Yellow</td>  
+      </tr>
+	  
+	  <tr class="text-center">
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>
+        <td>Orange</td>    
+      </tr>
+	  
+	  <tr class="text-center">
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>
+        <td>Red</td>    
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2" rowspan="3">Action</td>
+        <td colspan="2">Remark</td>
+        <td colspan="19"></td>      
+      </tr>
+	  	  
+	  <tr class="text-center">
+        <td colspan="2">Date</td>
+        <td colspan="19"></td>      
+      </tr>
+	  
+	  <tr class="text-center">
+        <td colspan="2">Frequence</td>
+        <td colspan="19"></td>     
+      </tr>
+	       
+    </tbody>
+  </table>
+    	
+	</div>
+</div>
+
+
+<script>
+
+		var MONTHS = ['July', 'August', 'September'];
+		var color = [
+						'rgb(255, 51, 184)',
+                        'rgb(247, 189, 10 )',
+						'rgb(25, 51, 159)',
+						'rgb(10, 247, 153 )',
+						'rgb(51, 125, 255 )',
+                        'rgb(187, 51, 255)',
+                        'rgb(110, 255, 51 )'
+					];
+		var barChartData = {
+			labels: MONTHS,
+			datasets: [{
+				label: 'Total String 69',
+				backgroundColor: [
+                        'rgb(187, 51, 255)',
+						'rgb(187, 51, 255)',
+						'rgb(187, 51, 255)'
+					],
+				borderColor: 'rgb(251, 250, 247)',
+				borderWidth: 1,
+				data: [6, 5, 8]
+			}, {
+				label: 'Total String With Integrity Issue 4',
+				backgroundColor: [
+						'rgb(247, 189, 10 )',
+						'rgb(247, 189, 10 )',
+						'rgb(247, 189, 10 )'
+					],
+				borderColor: 'rgb(251, 250, 247)',
+				borderWidth: 1,
+				data: [8, 7, 6]
+			},
+			{
+				label: 'Total String Remedial Done 2',
+				backgroundColor: [
+						
+						'rgb(25, 51, 159)',
+						'rgb(25, 51, 159)',
+						'rgb(25, 51, 159)'
+					],
+				borderColor: 'rgb(251, 250, 247)',
+				borderWidth: 1,
+				data: [5, 6, 4]
+			}]
+
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myBar = new Chart(ctx, {
+				type: 'bar',
+				data: barChartData,
+				options: {
+					responsive: true,
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Corrective Action History'
+					}
+				}
+			});
+
+		};
+
+
+var toggler = document.getElementsByClassName("box");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("check-box");
+  });
+}
+</script>
+</body>
+</html>

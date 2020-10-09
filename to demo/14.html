@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Integrity Status</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="../../../../dist/2.9.3/Chart.min.js"></script>
+	<script src="../../utils.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src="../../../dist/2.9.3/Chart.min.js"></script>
+	<script src="../utils.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+    
+ul, #myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.box::before {
+  content: "\2610";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.check-box::before {
+  content: "\2611"; 
+  color: dodgerblue;
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3">
+<div class="container">
+
+<div class="row">
+<div class="col-sm-9">
+<br>
+              <label for="input-search">Search for wells:</label>
+            <div class="form-group">
+              <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
+            </div>
+            
+            <ul id="myUL">
+  <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Wells</span>
+    <ul class="nested">
+      <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Active</span>
+        <ul class="nested">
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F1</span>
+            	<ul class="nested">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              	</ul>
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F2</span>
+            <ul class="nested">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </li>
+        </ul>
+      </li> 
+      
+      <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Cycle</span>
+        <ul class="nested">
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F1</span>
+            	<ul class="nested">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              	</ul>
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F2</span>
+            <ul class="nested">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+      
+      
+      <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Idle</span>
+        <ul class="nested">
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F1</span>
+            	<ul class="nested">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              	</ul>
+          <li><span class="box"><i class="fa fa-folder-open" style="font-size:15px;color:grey"></i>Field: F2</span>
+            <ul class="nested">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+    </ul>
+  </li>
+</ul>
+            
+            <br>
+            <button type="button" class="btn btn-light" id="btn-search">Search</button>
+            <button type="button" class="btn btn-light" id="btn-clear-search">Clear</button>
+</div>
+</div>
+</div></div>
+    <div class="col-sm-8">
+                          <div class="container">
+                            <br>
+                            <h2>Integrity Status</h2>
+                            <br>
+
+                            <div class="container text-right">
+                              <button type="button" class="btn btn-light">Export</button>
+                              <button type="button" class="btn btn-light">Report</button>
+                            </div>
+
+                            <br>
+
+                            <div class="card-deck">
+                              <div class="card bg-success">
+                                <div class="card-body text-center">
+                                  <p class="card-text text-white"><h2 class="text-white">B10251 Operating</h2></p>
+                                <ul class="list-inline">
+                                  <li class="list-inline-item"><i class='fas fa-list-ul' style='font-size:50px;color:green'></i></li>
+                                  <li class="list-inline-item"><i class='fas fa-tools' style='font-size:50px;color:green'></i></li>
+                                  <li class="list-inline-item"><i class='fas fa-hockey-puck' style='font-size:50px;color:green'></i></li>
+                                </ul>
+                              </div>
+                            </div>  
+                            <div class="card bg-success">
+                              <div class="card-body text-center">
+                                <p class="card-text text-white"><h2 class="text-white">B10251 Operating</h2></p>
+                              <ul class="list-inline">
+                                <li class="list-inline-item"><i class='fas fa-list-ul' style='font-size:50px;color:green'></i></li>
+                                <li class="list-inline-item"><i class='fas fa-tools' style='font-size:50px;color:green'></i></li>
+                                <li class="list-inline-item"><i class='fas fa-hockey-puck' style='font-size:50px;color:green'></i></li>
+                              </ul>
+                            </div>
+                          </div> 
+                        </div>
+
+                        <br>
+
+                        <div class="card-deck">
+                          <div class="card bg-warning">
+                            <div class="card-body text-center">
+                              <p class="card-text"><h2 class="text-white">A30008 Operating</h2></p>
+                            <ul class="list-inline">
+                              <li class="list-inline-item"><i class='fas fa-list-ul' style='font-size:50px;color:yellow'></i></li>
+                              <li class="list-inline-item"><i class='fas fa-tools' style='font-size:50px;color:yellow'></i></li>
+                              <li class="list-inline-item"><i class='fas fa-hockey-puck' style='font-size:50px;color:yellow'></i></li>
+                            </ul>
+                          </div>
+                        </div>  
+                        <div class="card bg-warning">
+                          <div class="card-body text-center">
+                            <p class="card-text"><h2 class="text-white">A30008 Operating</h2></p>
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class='fas fa-list-ul' style='font-size:50px;color:yellow'></i></li>
+                            <li class="list-inline-item"><i class='fas fa-tools' style='font-size:50px;color:yellow'></i></li>
+                            <li class="list-inline-item"><i class='fas fa-hockey-puck' style='font-size:50px;color:yellow'></i></li>
+                          </ul>
+                        </div>
+                      </div>  
+                      </div>
+
+                      <br>
+
+                      <div class="card-deck">
+                        <div class="card bg-danger">
+                          <div class="card-body text-center">
+                            <p class="card-text"><h2 class="text-white">A10025 Operating</h2></p>
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class='fas fa-list-ul' style='font-size:50px;color:red'></i></li>
+                            <li class="list-inline-item"><i class='fas fa-tools' style='font-size:50px;color:red'></i></li>
+                            <li class="list-inline-item"><i class='fas fa-hockey-puck' style='font-size:50px;color:red'></i></li>
+                          </ul>
+                        </div>
+                      </div>  
+                      <div class="card bg-danger">
+                        <div class="card-body text-center">
+                          <p class="card-text"><h2 class="text-white">A10025 Operating</h2></p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i class='fas fa-list-ul' style='font-size:50px;color:red'></i></li>
+                          <li class="list-inline-item"><i class='fas fa-tools' style='font-size:50px;color:red'></i></li>
+                          <li class="list-inline-item"><i class='fas fa-hockey-puck' style='font-size:50px;color:red'></i></li>
+                        </ul>
+                      </div>
+                      </div>  
+                      </div>
+
+                    <hr>
+                    <div id="container" style="width: 75%;">
+                      <canvas id="canvas-area"></canvas>
+                    </div>
+                    <hr>
+                    </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+		var barChartData = {
+			labels: ['B10251', 'A10025', 'A30008'],
+			datasets: [{
+				label: 'Upper Operating Limit 80%(UOL)',
+				backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235 )',		
+						'rgb(255, 205, 86 )'
+					],
+				borderColor: 'rgb(255,255,255 )',
+				borderWidth: 1,
+				data: [2177, 681, 246]
+			}, {
+				label: 'MAASP',
+				backgroundColor: [
+						'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235 )',		
+						'rgb(255, 205, 86 )'
+					],
+				borderColor: 'rgb(255,255,255)',
+				borderWidth: 1,
+				data: [1741, 545, 197]
+			},
+			{
+				label: 'MAWOP',
+				backgroundColor: [
+						'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235 )',		
+						'rgb(255, 205, 86 )'
+					],
+				borderColor: 'rgb(255,255,255)',
+				borderWidth: 1,
+				data: [3259, 2384, 979]
+			}]
+
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas-area').getContext('2d');
+			window.myDoughnut = new Chart(ctx, {
+				type: 'doughnut',
+				data: barChartData,
+				options: {
+					responsive: true,
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Integrity Status'
+					}
+				}
+			});
+
+		};
+
+
+
+
+
+
+
+
+
+	</script>
+<script>
+var toggler = document.getElementsByClassName("box");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("check-box");
+  });
+}
+</script>
+</body>
+</html>

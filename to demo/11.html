@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CDFT Test Inputs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+
+				<div class="container">
+				<h2>CDFT Inputs</h2>
+						<form>
+								<div class="row">
+									<div class="col font-weight-bold">
+											Platform Location
+											<input type="text" class="form-control" id="platformlocation" name="platformlocation">
+									</div>
+									<div class="col font-weight-bold">
+											Well Number
+											<input type="text" class="form-control" id="wellnumber" name="wellnumber">
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col font-weight-bold">
+											Work Order Number
+											<input type="text" class="form-control" id="workorderno" name="workorderno">
+									</div>
+									<div class="col font-weight-bold">
+											Date
+											<input type="date" class="form-control" id="date" name="date">
+									</div>
+								</div>
+								
+								<div class="row">
+										<div class="col font-weight-bold">
+												<div class="form-group">
+													<label for="currentwellstatus">Current Well Status</label>
+															<select class="form-control" id="currentwellstatus">
+																	<option>Please select</option>
+																	<option>Producing</option>
+																	<option>Shut-in</option>
+																	<option>Injecting</option>
+																	<option>etc.</option>
+															</select>
+												</div>
+										</div>
+								</div>
+								
+								<div class="row">
+										<div class="col font-weight-bold">
+												<div class="form-group">
+														<label for="welltype">Well Type</label>
+														<select class="form-control" id="welltype">
+																<option>Please select</option>
+																<option>Natural Flow</option>
+																<option>Gas Injection</option>
+																<option>Gas Lift</option>
+																<option>Water Injection</option>
+																<option>ESP</option>
+																<option>etc.</option>
+														</select>
+												</div>
+										</div>      
+								</div>
+								
+								<div class="row">
+										<div class="col font-weight-bold">
+												Wellhead Elevation
+												<input type="text" class="form-control" placeholder="Distance from the grating to the last recorded mark" id="workorderno" name="workorderno">
+										</div>      
+								</div>
+								
+								<div class="row">
+										<div class="col font-weight-bold">
+												Visual Inspection
+												<input type="text" class="form-control" placeholder="Record any anomalies, such as excessive corrosions, small leaks,  component external damage and avalibility of gauges, handles, needle valve etc.)" id="workorderno" name="workorderno">
+										</div>      
+								</div>
+								<hr>
+								
+								<div class="d-flex flex-column mb-3">
+										<div class="p-2 bg-dark text-white">TRSCSSV</div>
+								</div>     
+								
+								<div class="row">
+										<div class="col font-weight-bold">
+												FTHP - Flowing Tubing Head Pressure - (psig)
+												<input type="text" class="form-control" placeholder="If Shut-in revert to last FTHP from daily production report" id="fthp" name="fthp">
+										</div>      
+								</div>
+								
+								<div class="row">
+										<div class="col font-weight-bold">
+												FTHT - Flowing Tubing Head Temperature (Deg F)
+												<input type="text" class="form-control" placeholder="If Shut-in revert to last FTHT from daily production report" id="ftht" name="ftht">
+										</div>      
+								</div>
+								
+								<div class="row">
+										<div class="col font-weight-bold">
+												SITHP (psig)
+												<input type="text" class="form-control" placeholder="Shut-In Tubing Head Pressure" id="sithp" name="sithp">
+										</div>      
+								</div>
+
+								<div class="font-weight-bold">SITHT (Deg F) Shut-In Tubing Head Temperature</div>
+								
+								<div class="row">      
+										<div class="col">
+												Before Test
+												<input type="text" class="form-control" placeholder="" id="sitht1" name="sitht1">
+										</div> 
+										<div class="col">
+												After Test
+												<input type="text" class="form-control" placeholder="" id="sitht2" name="sitht2">
+										</div> 
+								</div>
+
+								<div class="font-weight-bold">TR-SCSSSV Control Line Pressure (psig) - Initial</div>
+								
+								<div class="row">      
+										<div class="col">
+												Before Test
+												<input type="text" class="form-control" placeholder="" id="trscsssv" name="trscsssv">
+										</div> 
+										<div class="col">
+												After Test
+												<input type="text" class="form-control" placeholder="" id="trscsssv1" name="trscsssv1">
+										</div>
+								</div>
+								
+								<p class="font-weight-bold">TR-SCSSSV Control Line Integrity (psi) - Visually monitor for 15 minutes. Does it Maintain Integrity YES/No. If NO, what is the WHCP frequency to maintain C/L pressure.</p>
+								
+								<div class="font-weight-bold">Maintain Integrity :</div>
+								
+								<div class="form-check">    
+										<label class="form-check-label" for="check1">
+												<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>Yes
+										</label>
+								</div>
+								<div class="form-check">
+										<label class="form-check-label" for="check2">
+												<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">No
+										</label>      
+								</div>   
+
+										
+								<div class="row">
+										<div class="col font-weight-bold">
+												Strokes per Min:
+												<input type="text" class="form-control" placeholder="" id="strokes" name="strokes">
+										</div>   
+										<div class="col font-weight-bold">
+												Psig per Min:
+												<input type="text" class="form-control" placeholder="" id="strokes" name="strokes">
+										</div> 
+								</div>
+
+								<div class="row">
+										<div class="col font-weight-bold">
+												TR-SCSSSV Control Line Returns (ml)
+												<input type="text" class="form-control" placeholder="" id="clr" name="clr">
+										</div>      
+								</div>
+								
+								<div class="font-weight-bold">A Annulus Pressure (PCP) psig</div>
+								
+								<div class="row">      
+										<div class="col">
+												Before Test
+												<input type="text" class="form-control" placeholder="" id="aannulus" name="aannulus">
+										</div> 
+										<div class="col">
+												After Test
+												<input type="text" class="form-control" placeholder="" id="aannulus1" name="aannulus1">
+										</div>
+								</div>
+
+								<div class="font-weight-bold">B Annulus Pressure (ICP) psig</div>
+								
+								<div class="row">      
+										<div class="col">
+												Before Test
+												<input type="text" class="form-control" placeholder="" id="bannulus" name="bannulus">
+										</div> 
+										<div class="col">
+												After Test
+												<input type="text" class="form-control" placeholder="" id="bannulus1" name="bannulus1">
+										</div>
+								</div>
+
+								<div class="font-weight-bold">C Annulus Pressure (SCP) psig</div>
+								
+								<div class="row">      
+										<div class="col">
+												Before Test
+												<input type="text" class="form-control" placeholder="" id="cannulus" name="cannulus">
+										</div> 
+										<div class="col">
+												After Test
+												<input type="text" class="form-control" placeholder="" id="cannulus1" name="cannulus1">
+										</div>
+								</div>
+
+								<div class="row">
+										<div class="col font-weight-bold">
+												TR-SCSSSV - Tubing Pressure Bleed To (psig)
+												<input type="text" class="form-control" placeholder="" id="tpb" name="tpb">
+										</div>      
+								</div>
+
+								<div class="row">
+										<div class="col font-weight-bold">
+												Pressure Bleed To
+												<input type="text" class="form-control" placeholder="Flow line and LP or HP Vessel or Cased Drain" id="pbt" name="pbt">
+										</div>   
+
+										<div class="col font-weight-bold">
+												Pressure psig
+												<input type="text" class="form-control" placeholder="" id="pbt1" name="pbt1">
+										</div>  
+								</div>
+
+								<div class="font-weight-bold">
+								TR-SCSSSV Inflow Test Period (mins)
+								</div>  
+
+								<div class="row"> 
+										<div class="col font-weight-bold">
+												THP @ 5 min
+												<input type="text" class="form-control" placeholder="3" id="itp" name="itp">
+										</div>  
+										<div class="col font-weight-bold">
+												THP @ 10 min
+												<input type="text" class="form-control" placeholder="" id="itp1" name="itp1">
+										</div>  
+										<div class="col font-weight-bold">
+												THP @ 15 min
+												<input type="text" class="form-control" placeholder="" id="itp2" name="itp2">
+										</div>  
+										<div class="col font-weight-bold">
+												THP @ 20 min
+												<input type="text" class="form-control" placeholder="" id="itp3" name="itp3">
+										</div> 
+										<div class="col font-weight-bold">
+												THP @ 30 min
+												<input type="text" class="form-control" placeholder="100" id="itp4" name="itp4">
+										</div> 
+								</div>
+						</form>
+
+				<button type="submit" class="btn btn-primary m-2 pb-2 float-right">Save <i class='far fa-save'></i></button>
+				<button type="submit" class="btn btn-primary m-2 pb-2 float-right">Print <i class='fas fa-print'></i></button>
+				</div>
+
+</body>
+</html>
